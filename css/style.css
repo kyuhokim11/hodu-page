@@ -1,1 +1,729 @@
 /* style.css */
+
+@import url(./reset.css);
+@import url(./font.css);
+
+
+
+* { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: hidden; }
+body { margin: 0; font-family: 'spoqaHanSansNeoRegular', sans-serif;  }
+
+/* 이미지/아이콘이 화면보다 커지지 않도록 */
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+
+
+/* -------------- 헤 더 (모바일 우선)-------------- */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: #F2E9D8;
+}
+
+.site-header-inner {
+  height: 72px;
+  display: flex; align-items: center; gap: 12px;
+  padding-inline: 20px;
+  width: 100%;
+}
+
+.brand-logo { height: 28px; width: auto; }
+
+/* 모바일에선 내비는 숨기고 햄버거만 보임 */
+.site-nav { display: none; }
+.site-nav-list {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; gap: 20px; align-items: center;
+}
+.site-nav-list a { text-decoration: none; color: #111;  }
+
+
+
+/* 다운로드 버튼 */
+.btn-downlod {
+  inline-size: max-content;
+  appearance: none; border: 0; cursor: pointer;
+  padding: 15px 30px; border-radius: 40px;
+  background: #D97652; color: #fff; font-weight: 700;
+}
+
+.btn-learn-more {
+  inline-size: max-content;
+  appearance: none; border: 0; cursor: pointer;
+  padding: 15px 30px; border-radius: 40px;
+  background: #D97652; color: #fff; font-weight: 700;
+}
+
+.btn-subscribe {
+      inline-size: max-content;
+  appearance: none; border: 0; cursor: pointer;
+  padding: 15px 30px; border-radius: 40px;
+  background: #D97652; color: #fff; font-weight: 700;
+}
+
+
+.input-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative; /* 아이콘 절대 배치 기준 */
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 48px;
+  padding: 12px 16px 12px 44px; /* 왼쪽 아이콘 공간 */
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  font-size: 1rem;
+}
+
+.input-wrapper .input-icon {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper .input-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.input-wrapper .btn-subscribe {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 24px;
+  background: #D97652;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* 햄버거 버튼 */
+.nav-toggle { display: none; } /* 체크박스 숨김 */
+.hamburger {
+  margin-left: auto; width: 40px; height: 40px;
+  display: grid; place-items: center; cursor: pointer;
+}
+.hamburger img { width: 32px; height: 32px; }
+
+/* ============== 모바일 드로어 ============== */
+.drawer {
+  position: fixed; inset: 0 0 0 auto; /* right side sheet */
+  width: 66.666vw; max-width: 75%; height: 100%;
+  background: #263140;
+  transform: translateX(100%); transition: transform .25s ease;
+  z-index: 1001; display: flex; flex-direction: column;
+}
+.drawer-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px;
+}
+.drawer-title { font-weight: 700; }
+.drawer-close { cursor: pointer; font-size: 20px; line-height: 1; }
+.drawer-list {
+  list-style: none; margin: 0; padding: 66px 40px;
+  display: flex; flex-direction: column; gap: 30px;
+}
+.drawer-list a { padding-left: 10px; text-decoration: none; color:#fff; font-size: 18px; font-weight: 700; }
+.drawer-list .btn-downlod { width: 120px; margin-top: 20px; }
+
+/* 스크림(배경 차폐) */
+.drawer-scrim {
+  position: fixed; inset: 0; background: #fff;
+  opacity: 0; pointer-events: none; transition: opacity .25s ease; z-index: 1000;
+}
+
+/* 체크박스 토글로 열기 */
+.nav-toggle:checked ~ .drawer { transform: translateX(0); }
+.nav-toggle:checked ~ .drawer-scrim { opacity: 1; pointer-events: auto; }
+
+/* -------------- 메 인 (모바일 우선)-------------- */
+/* 레이아웃 가드: 푸터가 떠 있으니 아래 패딩 */
+.main {
+    width: 100%;    
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* -------------- 메 인 섹션 introduce (모바일 우선)-------------- */
+.section-introduce {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* 모바일 기본: 세로 정렬 */
+  align-items: center;
+  justify-content: center;
+background-color: #F2E9D8;
+    padding-inline: 60px;
+    padding-top: 40px;
+    gap:40px
+}
+
+.introduce-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+}
+.section-introduce .title{
+  max-width: 743px;
+    font-weight: 700;
+    font-size: 24px;
+}
+.section-introduce .description{
+    max-width: 438px;
+    font-size: 14px;
+}
+
+
+.introduce-img {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+
+/* -------------- 메 인 : 섹션 content (모바일 우선)-------------- */
+
+.section-content {
+width: 100%;
+  display: flex;
+  flex-direction: column; /* 모바일 기본: 세로 정렬 */
+  padding-inline: 32px;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  gap:40px
+}
+
+.content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.section-content .title{
+  max-width: 743px;
+    font-weight: 700;
+    font-size: 24px;
+}
+.section-content .description{
+    max-width: 438px;
+    font-size: 14px;
+}
+.content-img {
+    border-radius: 18px;
+}
+
+
+
+/* -------------- 메 인 : 섹션 gallery (모바일 우선)-------------- */
+
+.section-gallery {
+width: 100%;
+  display: flex;
+  flex-direction: column; /* 모바일 기본: 세로 정렬 */
+  padding-inline: 32px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  gap:40px
+}
+
+.gallery-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.section-gallery .title{
+  max-width: 743px;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    color: #D97652;
+}
+.section-gallery .description{
+    max-width: 438px;
+    font-size: 14px;
+    text-align: center;
+}
+.section-gallery span {
+    color: #D97652;
+    font-weight: 700;
+}
+.gallery-images {
+display: flex;
+  overflow-x: auto;       /* 가로 스크롤 가능 */
+  scroll-snap-type: x mandatory; /* 스크롤할 때 이미지 단위로 착착 멈춤 */
+  gap: 20px; 
+  filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25));
+  scrollbar-width: none;
+}
+.gallery-images img {
+    border-radius: 18px;
+    width: 80%;
+    
+}
+
+/* -------------- 메 인 : 섹션 learn-more (모바일 우선)-------------- */
+
+.section-learn-more {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* 모바일 기본: 세로 정렬 */
+  align-items: center;
+  justify-content: center;
+background-color: #F2E9D8;
+    padding-inline: 60px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    gap:40px;
+}
+
+
+.section-learn-more .description{
+    max-width: 438px;
+    font-size: 14px;
+}
+
+
+
+/* 상단 카드(구독) – 흐름은 그대로, 위에서 정상 시작 */
+.section-subscribe{
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;                 /* 배경 위에 올라오도록 */
+  padding: 36px;
+  color: #fff;
+  background: #263140;
+  border-radius: 18px;
+  gap: 20px
+}
+.subscribe-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.section-subscribe .title{
+    z-index: 3;
+    font-size: 24px;
+    font-weight: 700;
+}
+.section-subscribe .description{
+    font-size: 14;
+    font-weight: 400;
+}
+
+/* 하단 배경 섹션 – 위로 끌어올려 겹치게 */
+.section-background{
+  position: relative;
+  z-index: 1;                 /* 구독보다 아래 */
+  width: 100%;
+  height: 200px;
+  margin-top: calc(200px * -1 * 30 / 100); 
+  /* 배경의 상단을 위로 당겨서 구독 섹션 아래로 들어오게 */
+  overflow: hidden;
+}
+
+.background-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* 폭 유지, 높이 잘라내기 */
+}
+
+
+
+
+
+
+/* 공통 */
+.footer {
+  background: #fff;
+  color: #767676;
+  padding: 20px 5%;
+}
+
+.footer-logo img { height: 34px; display:block; }
+
+/* 아이콘 리스트 기본 */
+.sns {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; gap: 12px;
+}
+.sns img { width: 32px; height: 32px; display:block; }
+
+/* 메뉴 기본 */
+.footer-menu {
+  display: flex;
+  flex-direction: column;         /* 모바일: 세로 */
+  gap: 16px;
+  text-align: right;
+}
+.footer-menu a {
+  color: #767676;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* --------------------
+   모바일 퍼스트 레이아웃
+   로고/아이콘 = 좌측 컬럼 (2행)
+   메뉴 = 우측 컬럼 (2행 세로 정렬)
+--------------------- */
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;  /* 좌: 로고+SNS, 우: 메뉴 */
+  column-gap: 20px;
+  row-gap: 30px;
+  align-items: start;
+}
+
+.footer-logo { grid-column: 1; grid-row: 1; }   /* 좌측 1행 */
+.sns         { grid-column: 1; grid-row: 2; }   /* 좌측 2행 */
+.footer-menu { grid-column: 2; grid-row: 1 / span 2; align-items: flex-end; }
+
+/* --------------------
+   데스크톱: 메뉴 숨기고
+   로고 왼쪽 끝 / SNS 오른쪽 끝
+--------------------- */
+
+
+
+
+.overlay {
+  position: fixed; /* 화면 전체 덮기 */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* 반투명 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* 다른 요소 위 */
+}
+
+.modal {
+  background: url(../assets/images/img-bg-party.png) center/cover no-repeat;
+  width: 600px;
+  height: 400px;
+  border-radius: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 수직 중앙 */
+  align-items: center;     /* 수평 중앙 */
+  gap: 20px; /* 요소 간 간격 조금 여유 */
+  padding: 20px; /* 안쪽 여백 */
+  box-sizing: border-box;
+}
+
+/* 오버레이: 화면 중앙 정렬 */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;                 /* 중앙 배치 */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 모달 카드 - 모바일 퍼스트 */
+.modal {
+  background: url(../assets/images/img-bg-party.png) center/cover no-repeat;
+  width: 300px;       /* 모바일: 화면에 맞게 */
+  height: 300px;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;       /* 세로 중앙 */
+  align-items: center;           /* 가로 중앙 */
+  gap: 16px;
+}
+
+/* 너가 준 내부 요소들 (모바일 퍼스트) */
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;                   /* 버튼 100% 등 컨트롤 용이 */
+}
+
+.modal-img {
+  width: 62px;
+  height: auto;
+  display: block;
+  margin: 0 auto;                /* 수평 중앙 */
+}
+
+.modal .title {
+  color: #D97652;
+  font-size: 24px;               /* 모바일 폰트 살짝 줄임 */
+  font-weight: 700;
+  text-align: center;
+}
+
+.modal-button {
+  padding: 14px 20px;
+  border-radius: 40px;
+  background-color: #D97652;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 100%;                   /* 모바일: 버튼 가득 */
+}
+
+
+
+/* ============== 데스크톱(모바일이 아닌 경우) ============== */
+@media (min-width: 768px) {
+
+    .input-wrapper {
+    position: relative;          /* 자식 absolute 기준 */
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .input-wrapper input {
+    padding: 12px 110px 12px 44px; /* 오른쪽 버튼(≈100px), 왼쪽 아이콘(≈32px+여백) 공간 확보 */
+    border-radius: 30px;
+  }
+
+  .input-wrapper .input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .input-wrapper .input-icon img {
+    width: 20px; height: 20px;
+  }
+
+  .input-wrapper .btn-subscribe {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: calc(100% - 12px);   /* 인풋 높이 안쪽으로 살짝 여백 */
+    padding: 0 16px;
+    width: auto;                 /* 내용만큼 */
+    border-radius: 20px;
+  }
+
+
+
+    /* -------------- 헤 더 -------------- */
+  .site-header-inner {
+    height: 102px;
+    padding-inline: clamp(20px, 10vw, 320px);
+    max-width: 1920px;    /* 선택: 최대 컨테이너 폭 */
+    margin: 0 auto;
+    justify-content: space-between; /* 로고 좌 / 내비 우 */
+  }
+  /* 데스크톱: 내비 보이고, 햄버거/드로어는 숨김 */
+  .site-nav { display: block; margin-left: auto; }
+  .site-nav-list { gap: 30px; flex-wrap: wrap; } /* 폭이 애매하면 줄바꿈으로 넘침 방지 */
+  .hamburger, .drawer, .drawer-scrim { display: none; }
+  .brand-logo { height: 40px; }
+
+  .footer-menu {display: none;}
+
+  /* -------------- 메 인 -------------- */
+    .main {
+    max-width: 1920px; 
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* -------------- 메 인 : 섹션 introduce -------------- */
+ .section-introduce {
+    padding-inline: clamp(20px, 10vw, 320px);
+    flex-direction: row; /* 가로 정렬 */
+    aspect-ratio: 1920 / 700; /* 데스크톱에서만 비율 고정 */   
+    padding-top: 10px;
+  }
+  .introduce-text {
+  align-items: flex-start;
+    text-align: left;
+  }
+.section-introduce .title{
+  max-width: 734px;
+    font-size: 48px;
+}
+.section-introduce .description{
+    max-width: 438px;
+    font-size: 16px;
+}
+  .introduce-img {
+    height: 75vh; /* 부모 높이(비율) 기준으로 맞춤 */
+    width: 35vw;
+  }
+
+  /* -------------- 메 인 : 섹션 content -------------- */
+ .section-content {
+    padding-inline: clamp(20px, 10vw, 320px);
+    flex-direction: row; /* 가로 정렬 */
+    aspect-ratio: 1920 / 700; /* 데스크톱에서만 비율 고정 */   
+    padding-top: 80px;
+    padding-bottom: 120px;
+    gap: 110px
+  }
+  .content-text {
+    justify-content: center;
+  }
+  .section-content .title{
+  max-width: 734px;
+    font-size: 48px;
+}
+.section-content .description{
+    max-width: 438px;
+    font-size: 16px;
+}
+  .content-img {
+    max-width: 660px;
+    width: 35vw;
+    border-radius: 30px;
+
+  }
+
+
+  /* -------------- 메 인 : 섹션 gallery -------------- */
+
+.section-gallery {
+padding-inline: clamp(20px, 10vw, 320px);
+    flex-direction: column; /* 가로 정렬 */
+    aspect-ratio: 1920 / 700; /* 데스크톱에서만 비율 고정 */   
+    padding-top: 60px;
+    padding-bottom: 100px;
+    gap: 110px
+}
+
+.gallery-text {
+    align-items: center;
+}
+
+.section-gallery .title{
+  max-width: 50vw;
+    font-weight: 700;
+    font-size: 48px;
+    text-align: center;
+    color: #D97652;
+}
+.section-gallery .description{
+  max-width: 40vw;
+    font-size: 16px;
+    text-align: center;
+}
+.gallery-images { 
+  filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25));
+   display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 동일 폭 3등분 */
+  gap: 72px; /* 동일 간격 */
+}
+.gallery-images img {
+ width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+    
+}
+
+/* -------------- 메 인 : 섹션 learn-more -------------- */
+
+.section-learn-more {
+padding-inline: clamp(20px, 10vw, 320px);
+flex-direction: row;
+    padding-top: 30px;
+    padding-bottom: 90px;
+    gap: 32px;
+  }
+  
+
+.section-learn-more .description{
+  max-width: 50vw;
+    font-size: 16px;
+}
+.about-list {
+    color:#D97652
+}
+
+
+
+
+
+  .section-background {
+    height: 340px; /* ✅ 데스크톱 높이 */
+  }
+
+  
+  .section-subscribe{
+    padding-inline: clamp(20px, 10vw, 320px);
+    
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* 텍스트 | 폼 가로 배치 원하면 */
+    align-items: center;
+    gap: 24px;
+  }
+
+.footer { padding: 40px 10%; }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-menu { display: none; }         /* ✅ 데스크톱에서 메뉴 숨김 */
+
+  .footer-logo { margin-right: auto; }    /* 왼쪽 끝으로 밀기 */
+  .sns { margin-left: auto; }             /* 오른쪽 끝으로 밀기 */
+
+  .footer-logo img { height: 70px; }
+  .sns img { width: 42px; height: 42px; }
+
+  
+
+  .modal {
+    width: 600px;
+    height: 400px;
+    border-radius: 30px;
+    padding: 24px;
+    gap: 24px;
+  }
+  .modal-img {
+    width: 110px;
+  }
+  .modal .title {
+    font-size: 36px;
+  }
+  .modal-button {
+    width: auto;                 /* 데스크톱에선 내용만큼 */
+    padding: 16px 24px;
+  }
+
+}
+
+
+
+
+
+
+
+

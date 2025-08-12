@@ -1,11 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>호두 페이지</title>
-</head>
-<body>
-    페이지를 준비중입니다.
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>호두 페이지</title>
+        <link rel="stylesheet" href="./css/style.css"/>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="site-header-inner">
+                <a href="#" class="brand">
+                    <img src="./assets/icons/logo-hodu.svg" alt="사이트 로고" class="brand-logo"/>
+                </a>
+
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true"/>
+                <label for="nav-toggle" class="hamburger" aria-label="메뉴 열기/닫기">
+                    <img src="./assets/icons/icon-menu.svg" alt="메뉴 버튼"/>
+                </label>
+
+                <nav class="site-nav" aria-label="주 내비게이션">
+                    <ul class="site-nav-list">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Support</a>
+                        </li>
+                        <li>
+                            <button href="#" class="btn-downlod">Download</button>
+                        </li>
+                    </ul>
+                </nav>
+
+                <aside class="drawer" aria-label="모바일 메뉴">
+                    <div class="drawer-header">
+                        <label for="nav-toggle" class="drawer-close" aria-label="메뉴 닫기"><img src="./assets/icons/icon-arrow-right.svg" alt="메뉴 닫기 버튼"/></label>
+                    </div>
+                    <ul class="drawer-list">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Support</a>
+                        </li>
+                        <li>
+                            <button href="#" class="btn-downlod">Download</button>
+                        </li>
+                    </ul>
+                </aside>
+                <label for="nav-toggle" class="drawer-scrim" aria-hidden="true"></label>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="section-introduce">
+                <div class="introduce-text">
+                    <p class="title">Lorem Ipsum is simply dummy text of the printing and</p>
+                    <p class="description">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                        ever since the 1500s, when an unknown</p>
+
+                    <button href="#" class="btn-downlod">Download</button>
+                </div>
+                <img src="./assets/images/img-cat-box.png" alt="" class="introduce-img"/>
+            </section>
+
+            <section class="section-content">
+                <img src="./assets/images/img-4.png" alt="" class="content-img"/>
+                <div class="content-text">
+                    <p class="title">Lorem Ipsum is simply dummy text of the printing and dummy text</p>
+                    <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section-gallery">
+                <div class="gallery-text">
+                    <p class="title">dummy text of the printing and dummy</p>
+                    <p class="description">Lorem Ipsum is simply
+                        <span>dummy text</span>
+                        of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown</p>
+                </div>
+                <div class="gallery-images">
+                    <img src="./assets/images/img-1.png" alt="" class="gallery-img"/>
+                    <img src="./assets/images/img-2.png" alt="" class="gallery-img"/>
+                    <img src="./assets/images/img-3.png" alt="" class="gallery-img"/>
+                </div>
+            </section>
+
+            <section class="section-learn-more">
+                <p class="description">Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, when an unknown Ipsum is simply dummy text of the printing
+                    and typesetting industry.
+                </p>
+                <button href="#" class="btn-learn-more">Learn More</button>
+            </section>
+
+            <section class="section-subscribe">
+                <div class="subscribe-text">
+                    <p class="title">Subscribe to our Blog post</p>
+                    <p class="description">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                    </p>
+
+                </div>
+                <div class="input-wrapper">
+                    <span class="input-icon">
+                        <img src="./assets/icons/icon-mail.svg" alt="Email"/>
+                    </span>
+                    <input type="email" placeholder="Enter your email"/>
+                    <button class="btn-subscribe">Subscribe</button>
+                </div>
+
+            </section>
+
+            <section class="section-background">
+
+                <img src="./assets/images/img-5.png" alt="" class="background-img"/>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-inner">
+                <div class="footer-logo">
+                    <img src="./assets/icons/logo-hodu.svg" alt="Logo"/>
+                </div>
+                <ul class="sns">
+                    <li>
+                        <a href="#" aria-label="Twitter"><img src="./assets/icons/icon-blog.svg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Facebook"><img src="./assets/icons/icon-insta.svg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Instagram"><img src="./assets/icons/icon-facebook.svg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="YouTube"><img src="./assets/icons/icon-youtube.svg" alt=""></a>
+                    </li>
+                </ul>
+                <nav class="footer-menu">
+                    <a href="#">About</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Support</a>
+                    <a href="#">Terms of Use</a>
+                </nav>
+
+            </div>
+        </footer>
+
+        <div class="overlay" id="overlay">
+            <div
+                class="modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modal-title"
+                aria-describedby="modal-desc">
+                <header class="modal-header"></header>
+                <div class="modal-body">
+                    <img class="modal-img" src="./assets/images/img-cat-head.png"/>
+                    <p class="title">Thank you!</p>
+                    <p class="description">Lorem Ipsum is simply dummy text of the printing industry.
+                    </p>
+                </div>
+
+                <footer class="modal-footer">
+                    <button class="modal-button" id="cancel-modal">OK! I Love HODU</button>
+                </footer>
+            </div>
+        </div>
+    </body>
 </html>
