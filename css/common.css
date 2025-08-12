@@ -1,0 +1,199 @@
+/* ======================
+   Common (reset & base)
+   ====================== */
+@import url(./reset.css);
+@import url(./font.css);
+
+* { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: hidden; }
+body { margin: 0; font-family: 'spoqaHanSansNeoRegular', sans-serif; }
+
+/* 포커스 표시(접근성) */
+:focus-visible { outline: 3px solid #D97652; outline-offset: 3px; }
+
+/* 스크린리더 전용(시각 숨김, 포커스는 가능) */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px; margin: -1px; padding: 0; border: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* 미디어 요소는 컨테이너를 넘지 않게 */
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+/* ======================
+   Header (mobile first)
+   ====================== */
+.site-header { position: sticky; top: 0; z-index: 100; background: #F2E9D8; }
+.site-header-inner {
+  height: 72px; display: flex; align-items: center; gap: 12px;
+  padding-inline: 20px; width: 100%;
+}
+.brand-logo { height: 28px; width: auto; }
+
+/* 내비: 모바일은 숨김, 햄버거만 표시 */
+.site-nav { display: none; }
+.site-nav-list {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; gap: 20px; align-items: center;
+}
+.site-nav-list a { text-decoration: none; color: #111; }
+
+/* ======================
+   Buttons
+   ====================== */
+.btn {
+  inline-size: max-content;
+  appearance: none; border: 0; cursor: pointer;
+  padding: 15px 30px; border-radius: 40px; font-weight: 700;
+}
+.btn-download,
+.btn-learn-more,
+.btn-subscribe { background: #D97652; color: #fff; }
+
+/* ======================
+   Input group
+   ====================== */
+.input-wrapper {
+  width: 100%; display: flex; flex-direction: column; gap: 12px; position: relative;
+}
+.input-wrapper input {
+  width: 100%; height: 48px; padding: 12px 16px 12px 44px;
+  border: 1px solid #ccc; border-radius: 24px; font-size: 1rem;
+}
+.input-wrapper .input-icon { position: absolute; left: 12px; top: 12px; display: flex; align-items: center; }
+.input-wrapper .input-icon img { width: 20px; height: 20px; }
+
+/* 구독 버튼(모바일 기본: 행 전체) → 데스크톱에서 위치 재정의 */
+.input-wrapper .btn-subscribe {
+  width: 100%; height: 48px; border-radius: 24px;
+}
+
+/* ======================
+   Drawer (mobile)
+   ====================== */
+.nav-toggle { display: none; } /* 토글 체크박스 숨김 */
+.hamburger { margin-left: auto; width: 40px; height: 40px; display: grid; place-items: center; cursor: pointer; }
+.hamburger img { width: 32px; height: 32px; }
+
+.drawer {
+  position: fixed; inset: 0 0 0 auto; width: 66.666vw; max-width: 75%; height: 100%;
+  background: #263140; transform: translateX(100%); transition: transform .25s ease;
+  z-index: 1001; display: flex; flex-direction: column;
+}
+.drawer-header { display: flex; align-items: center; justify-content: space-between; padding: 20px; }
+.drawer-title { font-weight: 700; }
+.drawer-close { cursor: pointer; font-size: 20px; line-height: 1; }
+
+.drawer-list {
+  list-style: none; margin: 0; padding: 66px 40px;
+  display: flex; flex-direction: column; gap: 30px;
+}
+.drawer-list a { padding-left: 10px; text-decoration: none; color: #fff; font-size: 18px; font-weight: 700; }
+.drawer-list .btn-download { width: 120px; margin-top: 20px; }
+
+/* 스크림 */
+.drawer-scrim {
+  position: fixed; inset: 0; background: #fff;
+  opacity: 0; pointer-events: none; transition: opacity .25s ease; z-index: 1000;
+}
+
+/* 체크박스 토글 */
+.nav-toggle:checked ~ .drawer { transform: translateX(0); }
+.nav-toggle:checked ~ .drawer-scrim { opacity: 1; pointer-events: auto; }
+
+/* ======================
+   Main
+   ====================== */
+.main { width: 100%; display: flex; flex-direction: column; align-items: center; }
+
+/* ======================
+   Footer
+   ====================== */
+.footer { background: #fff; color: #767676; padding: 20px 5%; }
+.footer-logo img { height: 34px; }
+
+/* SNS 아이콘 */
+.sns { list-style: none; margin: 0; padding: 0; display: flex; gap: 12px; }
+.sns img { width: 32px; height: 32px; }
+
+/* 메뉴 */
+.footer-menu { display: flex; flex-direction: column; gap: 16px; text-align: right; }
+.footer-menu a { color: #767676; font-size: 14px; text-decoration: none; }
+
+/* 모바일 레이아웃: 좌(로고+SNS) / 우(메뉴) */
+.footer-inner {
+  display: grid; grid-template-columns: 1fr auto; column-gap: 20px; row-gap: 30px; align-items: start;
+}
+.footer-logo { grid-column: 1; grid-row: 1; }
+.sns        { grid-column: 1; grid-row: 2; }
+.footer-menu{ grid-column: 2; grid-row: 1 / span 2; align-items: flex-end; }
+
+/* ======================
+   Modal (overlay + card)
+   ====================== */
+/* 오버레이: 단일 정의 */
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.45);
+  display: flex; justify-content: center; align-items: center; z-index: 1000;
+}
+
+/* 공통 뼈대(크기 제외) */
+.modal {
+  background: url(../assets/images/img-bg-party.png) center/cover no-repeat;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  box-sizing: border-box;
+}
+
+/* 모바일 크기 */
+@media (max-width: 767px) {
+  .modal { width: 300px; height: 300px; border-radius: 20px; padding: 20px; gap: 16px; }
+}
+
+/* 모달 내부 */
+.modal-body { display: flex; flex-direction: column; gap: 20px; width: 80%; align-items: center; }
+.modal-img { width: 62px; }
+.modal .title { color: #D97652; font-size: 24px; font-weight: 700; text-align: center; }
+.modal-button {
+  padding: 14px 20px; border-radius: 40px; background-color: #D97652;
+  font-size: 14px; color: #fff; border: none; cursor: pointer; width: 100%;
+}
+
+/* ======================
+   Desktop overrides
+   ====================== */
+@media (min-width: 768px) {
+  /* 인풋: 버튼을 인풋 우측에 겹치기 */
+  .input-wrapper { position: relative; flex-direction: row; align-items: center; }
+  .input-wrapper input { padding: 12px 110px 12px 44px; border-radius: 30px; }
+  .input-wrapper .input-icon { left: 12px; top: 50%; transform: translateY(-50%); }
+  .input-wrapper .btn-subscribe {
+    position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+    height: calc(100% - 12px); padding: 0 16px; width: auto; border-radius: 20px;
+  }
+
+  /* 헤더: 좌우 여백 + 내비 표시 */
+  .site-header-inner {
+    height: 102px; padding-inline: clamp(20px, 10vw, 320px);
+    max-width: 1920px; margin: 0 auto; justify-content: space-between;
+  }
+  .site-nav { display: block; margin-left: auto; }
+  .site-nav-list { gap: 30px; flex-wrap: wrap; }
+  .hamburger, .drawer, .drawer-scrim { display: none; }
+  .brand-logo { height: 40px; }
+
+  /* 푸터: 좌/우 끝 배치, 메뉴 숨김 */
+  .footer { padding: 40px 10%; }
+  .footer-inner { display: flex; align-items: center; gap: 20px; }
+  .footer-menu { display: none; }
+  .footer-logo { margin-right: auto; }
+  .sns { margin-left: auto; }
+  .footer-logo img { height: 70px; }
+  .sns img { width: 42px; height: 42px; }
+
+  /* 모달: 데스크톱 크기 */
+  .modal { width: 600px; height: 400px; border-radius: 30px; padding: 24px; gap: 24px; }
+  .modal-img { width: 110px; }
+  .modal .title { font-size: 36px; }
+  .modal-button { width: auto; padding: 16px 24px; }
+}

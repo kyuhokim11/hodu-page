@@ -1,0 +1,265 @@
+/* sections.css */
+
+/* -------------- 메 인 섹션 introduce (모바일 우선)-------------- */
+.section-introduce {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* 모바일 기본: 세로 정렬 */
+  align-items: center;
+  justify-content: center;
+  background-color: #F2E9D8;
+  padding-inline: 60px;
+  padding-top: 40px;
+  gap: 40px;
+}
+.introduce-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+}
+.section-introduce .title{
+  max-width: 743px;
+  font-weight: 700;
+  font-size: 24px;
+}
+.section-introduce .description{
+  max-width: 438px;
+  font-size: 14px;
+}
+.introduce-img {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* -------------- 메 인 : 섹션 content (모바일 우선)-------------- */
+.section-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 32px;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  gap: 40px;
+}
+.content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.section-content .title{
+  max-width: 743px;
+  font-weight: 700;
+  font-size: 24px;
+}
+.section-content .description{
+  max-width: 438px;
+  font-size: 14px;
+}
+.content-img {
+  border-radius: 18px;
+}
+
+/* -------------- 메 인 : 섹션 gallery (모바일 우선)-------------- */
+.section-gallery {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 32px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  gap: 40px;
+}
+.gallery-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.section-gallery .title{
+  max-width: 743px;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  color: #D97652;
+}
+.section-gallery .description{
+  max-width: 438px;
+  font-size: 14px;
+  text-align: center;
+}
+.section-gallery span {
+  color: #D97652;
+  font-weight: 700;
+}
+.gallery-images {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px; 
+  filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25));
+  scrollbar-width: none;
+}
+.gallery-images img {
+  border-radius: 18px;
+  width: 80%;
+}
+
+/* -------------- 메 인 : 섹션 learn-more (모바일 우선)-------------- */
+.section-learn-more {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 60px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  gap: 40px;
+}
+.section-learn-more .description{
+  max-width: 438px;
+  font-size: 14px;
+}
+
+/* -------------- 메 인 : 섹션 subscribe (모바일 우선)-------------- */
+.section-subscribe{
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: 36px;
+  color: #fff;
+  background: #263140;
+  border-radius: 18px;
+  gap: 20px;
+}
+.subscribe-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.section-subscribe .title{
+  z-index: 3;
+  font-size: 24px;
+  font-weight: 700;
+}
+.section-subscribe .description{
+  font-size: 14;
+  font-weight: 400;
+}
+
+/* -------------- 메 인 : 섹션 background -------------- */
+.section-background{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 200px;
+  margin-top: calc(200px * -1 * 30 / 100);
+  overflow: hidden;
+}
+.background-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============== 데스크톱(모바일이 아닌 경우) ============== */
+@media (min-width: 768px) {
+  /* introduce */
+  .section-introduce {
+    padding-inline: clamp(20px, 10vw, 320px);
+    flex-direction: row;
+    aspect-ratio: 1920 / 700;
+    padding-top: 10px;
+  }
+  .introduce-text {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .section-introduce .title{ max-width: 734px; font-size: 48px; }
+  .section-introduce .description{ max-width: 438px; font-size: 16px; }
+  .introduce-img { height: 75vh; width: 35vw; }
+
+  /* content */
+  .section-content {
+    padding-inline: clamp(20px, 10vw, 320px);
+    flex-direction: row;
+    aspect-ratio: 1920 / 700;
+    padding-top: 80px;
+    padding-bottom: 120px;
+    gap: 110px;
+  }
+  .content-text { justify-content: center; }
+  .section-content .title{ max-width: 734px; font-size: 48px; }
+  .section-content .description{ max-width: 438px; font-size: 16px; }
+  .content-img {
+    max-width: 660px;
+    width: 35vw;
+    border-radius: 30px;
+  }
+
+  /* gallery */
+  .section-gallery {
+    padding-inline: clamp(20px, 10vw, 320px);
+    flex-direction: column;
+    aspect-ratio: 1920 / 700;
+    padding-top: 60px;
+    padding-bottom: 100px;
+    gap: 110px;
+  }
+  .gallery-text { align-items: center; }
+  .section-gallery .title{
+    max-width: 50vw;
+    font-weight: 700;
+    font-size: 48px;
+    text-align: center;
+    color: #D97652;
+  }
+  .section-gallery .description{
+    max-width: 40vw;
+    font-size: 16px;
+    text-align: center;
+  }
+  .gallery-images { 
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25));
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 72px;
+  }
+  .gallery-images img {
+    width: 100%;
+    border-radius: 18px;
+    object-fit: cover;
+  }
+
+  /* learn-more */
+  .section-learn-more {
+    padding-inline: clamp(20px, 10vw, 320px);
+    flex-direction: row;
+    padding-top: 30px;
+    padding-bottom: 90px;
+    gap: 32px;
+  }
+  .section-learn-more .description{
+    max-width: 50vw;
+    font-size: 16px;
+  }
+  .about-list { color:#D97652; }
+
+  /* background */
+  .section-background { height: 340px; }
+  /* subscribe */
+  .section-subscribe{
+    padding-inline: clamp(20px, 10vw, 320px);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 24px;
+  }
+}

@@ -511,6 +511,7 @@ background-color: #F2E9D8;
     .input-wrapper {
     position: relative;          /* 자식 absolute 기준 */
     flex-direction: row;
+    justify-content: flex-end;
     align-items: center;
   }
 
@@ -537,7 +538,8 @@ background-color: #F2E9D8;
     transform: translateY(-50%);
     height: calc(100% - 12px);   /* 인풋 높이 안쪽으로 살짝 여백 */
     padding: 0 16px;
-    width: auto;                 /* 내용만큼 */
+      width: 50%;
+  margin-left: auto;               /* 내용만큼 */
     border-radius: 20px;
   }
 
