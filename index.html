@@ -177,5 +177,34 @@
                 </footer>
             </div>
         </div>
+
+        <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const subscribeBtn = document.querySelector(".btn-subscribe"); // 구독 버튼
+    const modalOverlay = document.getElementById("overlay"); // 모달 배경
+    const modalCloseBtn = document.getElementById("cancel-modal"); // OK 버튼
+
+    // 초기에는 모달 숨기기
+    modalOverlay.style.display = "none";
+
+    // Subscribe 버튼 클릭 → 모달 열기
+    subscribeBtn.addEventListener("click", function (e) {
+      e.preventDefault(); // 버튼 기본 동작 방지
+      modalOverlay.style.display = "flex"; // flex로 해야 가운데 정렬
+    });
+
+    // OK 버튼 클릭 → 모달 닫기
+    modalCloseBtn.addEventListener("click", function () {
+      modalOverlay.style.display = "none";
+    });
+
+    // 모달 바깥 클릭 시 닫기
+    modalOverlay.addEventListener("click", function (e) {
+      if (e.target === modalOverlay) {
+        modalOverlay.style.display = "none";
+      }
+    });
+  });
+</script>
     </body>
 </html>
