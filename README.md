@@ -1,1 +1,77 @@
-# hodu-page
+# 호두 페이지
+
+HTML/CSS 기초 학습 후, 주어진 시안을 기반으로 제작한 반응형 랜딩 페이지입니다.  
+반려동물 관련 서비스의 소개와 구독 모달 UI를 포함하며, 모바일·데스크톱 환경에 맞춘 반응형 디자인을 적용했습니다.
+
+## 📌 프로젝트 개요
+- **목표**: HTML/CSS 기초 학습 후 주어진 시안에 맞춰 정적 랜딩 페이지 구현
+- **주요 기능**: 반응형 레이아웃, 구독 모달창 UI
+- **제작 기간**: 2025.08.11~12 (2일)
+- **사용 기술**: HTML5, CSS3
+- **배포 링크**: [GitHub Pages](https://kyuhokim11.github.io/hodu-page/)
+
+## 📂 폴더 구조
+```
+hodu-page/
+├── index.html
+├── assets/
+│   ├── icons/
+│   ├── images/
+│   ├── fonts/
+├── css/
+│   ├── reset.css
+│   ├── common.css      # 공통 스타일
+│   ├── section.css     # 섹션별 스타일
+│   ├── style.css     # common.css, section.css 로 분리 후 사용하지 않음
+├── docs/
+│   ├── issues.md
+│   ├── progress.md
+```
+## 📸 스크린샷 (Screenshots)
+1. **메인 화면**  
+![메인화면](https://kyuhokim11.github.io/hodu-page/assets/images/full-page.png)
+
+2. **구독 모달창**  
+![구독 모달창](https://kyuhokim11.github.io/hodu-page/assets/images/full-page-modal.png)
+
+3. **메인 화면 - 모바일**  
+![메인 화면 - 모바일](https://kyuhokim11.github.io/hodu-page/assets/images/full-page-mobile-01.png)
+![메인 화면 - 모바일](https://kyuhokim11.github.io/hodu-page/assets/images/full-page-mobile-02.png)
+
+4. **구독 모달창 - 모바일**  
+![구독 모달창 - 모바일](https://kyuhokim11.github.io/hodu-page/assets/images/full-page-mobile-modal.png)
+
+## 💡 구현 기능 (Features)
+- 시멘틱 태그를 활용한 구조 설계
+- 구독 모달창 UI 및 스타일링
+- 반응형 디자인 적용 (모바일/데스크톱 전환)
+- CSS 파일 분리(`common.css`, `section.css`)로 유지보수성 향상
+
+## ⚠ 개발 중 겪은 새로운 문제와 해결 과정
+> ※ 이전 프로젝트(1만 시간의 법칙 페이지)와 중복되는 문제점은 제외
+
+1. **복잡한 섹션 구조로 인한 작업 시간 증가**  
+   - 호두 페이지는 이미지·텍스트 배치가 다양한 섹션이 많아, 이전 프로젝트보다 스타일 설계와 레이아웃 조정에 시간이 더 소요됨.
+   - 해결: 공통 레이아웃 패턴을 먼저 설계하고, 이후 섹션별 개별 스타일을 적용.
+
+2. **CSS 구조 개선 필요성**  
+   - 모든 스타일이 하나의 파일에 있던 기존 방식은 유지보수에 비효율적이었음.
+   - 해결: `common.css`(공통 요소), `section.css`(섹션별 스타일)로 분리 → 스타일 중복 최소화, 수정 시 영향 범위 예측 가능.
+   - 추후 추가 리팩토링 작업 필요 → 작업효율 및 유지보수성 향상
+
+3. **중복 스타일 제거**  
+   - 비슷한 버튼, 제목, 텍스트 스타일이 여러 번 반복되어 코드량이 불필요하게 증가.
+   - 해결: 공통 클래스(`.btn`, `.title`, `.desc`)를 정의하여 재사용.
+
+4. **모달창 키보드 접근성 한계**  
+   - HTML/CSS만 사용하는 환경에서 Tab 이동 순서와 포커스 제어를 완벽하게 처리하기 어려움.
+   - 해결: 기본 Tab 순서를 최대한 맞추고, 추후 JS로 포커스 트랩 기능 추가 예정.
+
+## 🗣 느낀점 & 소감
+- 첫 프로젝트보다 구조가 복잡해 작업 시간이 늘었지만, CSS 분리와 중복 제거로 코드 품질이 개선됨.
+- 시안이 복잡하더라도, 먼저 공통 패턴을 상세하게 설계하고 나중에 세부 스타일을 적용하는 것이 효율적임을 배움.
+- 접근성은 HTML/CSS만으로 한계가 있어, JS 도입 시 우선적으로 개선할 필요성을 느낌.
+- 이번 프로젝트에서 CSS 구조화를 경험한 것이 이후 유지보수와 확장성 측면에서 큰 도움이 될 것이라 판단됨.
+
+## 📜 라이선스 (License)
+이 프로젝트는 MIT 라이선스를 따릅니다.
